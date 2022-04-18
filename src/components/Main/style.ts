@@ -2,129 +2,71 @@ import styled from "styled-components";
 
 export const MainStyle = styled.main`
   width: 100%;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-
-  background: var(--white);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 1.25rem;
 `;
 
 export const Container = styled.div`
   width: 100%;
-  max-width: 1200px;
+  min-height: 100vh;
+  max-width: 1144px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     justify-content: center;
-    align-items: center;
+  }
+
+  .ImageSvg {
+    @media (max-width: 1024px) {
+      display: none;
+    }
   }
 
   img {
     width: 100%;
     max-width: 400px;
   }
-
-  .imageP {
-    @media (max-width: 900px) {
-      display: none;
-    }
-  }
 `;
 
 export const ContainerForm = styled.div`
   width: 100%;
-  max-width: 350px;
-  padding-top: 60px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  color: var(--gray);
+  justify-content: center;
 
-  @media (max-width: 900px) {
-    padding-top: 5px;
+  p {
+    margin-top: 1.25rem;
+    text-align: center;
   }
 
   a {
+    font-family: "Lato", sans-serif;
     text-decoration: none;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
     color: var(--purple-light);
   }
 
-  p {
-    font-family: "Lato", sans-serif;
-    margin-top: 30px;
-    text-align: center;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-
-    a {
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 19px;
-    }
-  }
-
-  span,
-  h1,
-  label,
-  input {
-    color: var(--gray);
-  }
-
-  span {
+  h2 {
     font-family: "Merriweather", serif;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 1rem;
+    line-height: 1.25rem;
   }
 
   h1 {
     font-family: "Merriweather", serif;
     font-weight: 700;
-    font-size: 26px;
-    line-height: 33px;
-    margin: 6px 0 40px 0;
-  }
+    font-size: 1.625rem;
+    line-height: 2.0625rem;
 
-  label {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-  }
-
-  input {
-    border: 1px solid var(--gray);
-    border-radius: 5px;
-    padding-left: 1rem;
-
-    &:placeholder-shown {
-      outline: none;
-      padding-left: 1rem;
-    }
-
-    &:focus {
-      padding-left: 1rem;
-    }
-  }
-
-  input[type="text"],
-  input[type="password"] {
-    width: 100%;
-    max-width: 350px;
-    height: 50px;
-    margin: 10px 0;
-  }
-
-  input[type="password"] {
-    margin-bottom: 0;
-  }
-
-  input,
-  input::placeholder,
-  a {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
+    padding: 0.4375rem 0 1.875rem 0;
   }
 
   form {
@@ -132,50 +74,85 @@ export const ContainerForm = styled.div`
     display: flex;
     flex-direction: column;
 
+    label {
+      color: var(--gray);
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.1875rem;
+      margin-bottom: 0.625rem;
+    }
+
+    label[for="passwd"] {
+      margin-top: 0.625rem;
+    }
+
+    input,
+    button {
+      border-radius: 0.3125rem;
+    }
+
+    input {
+      height: 50px;
+      border: 1px solid #ccc;
+      border-radius: 0.3125rem;
+      padding-left: 1rem;
+
+      &:placeholder-shown {
+        outline: none;
+        padding-left: 1rem;
+      }
+      &:focus {
+        padding-left: 1rem;
+      }
+    }
+
+    input[type="checkbox"] {
+      height: 15px;
+    }
+
     div {
-      margin: 14px 0;
+      padding: 1.25rem 0;
       display: flex;
-      align-items: center;
       justify-content: space-between;
 
-      label {
-        font-size: 14px;
-      }
-
-      input {
-        border-radius: 10px;
-      }
-
       div {
-        gap: 10px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+
+        input {
+          margin-right: 0.625rem;
+        }
+
+        label {
+          margin: 0;
+        }
       }
     }
 
     button {
-      img {
-        width: 20px;
-      }
-    }
-
-    button {
-      font-family: "Lato", sans-serif;
       height: 50px;
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 19px;
-      background: var(--green-light);
       color: var(--white);
-      border-radius: 5px;
+      background-color: var(--green-light);
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1.1875rem;
       border: none;
+      margin-bottom: 1rem;
     }
 
     button:last-child {
-      margin-top: 16px;
-      background: var(--gray);
+      background-color: var(--gray);
       display: flex;
-      justify-content: center;
-      gap: 10px;
       align-items: center;
+      justify-content: center;
+
+      img {
+        max-width: 16px;
+        margin-right: 0.625rem;
+      }
     }
   }
 `;

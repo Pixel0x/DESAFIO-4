@@ -6,15 +6,19 @@ export function Main() {
   return (
     <MainStyle>
       <Container>
-        <img className="imageP" src={ImageSvg} />
+        <img className="ImageSvg" src={ImageSvg} />
+
         <ContainerForm>
-          <span>Bem vindo de volta</span>
-          <h1>Faça login na sua conta</h1>
-          <form action="">
+          <div>
+            <h2>Bem vindo de volta</h2>
+            <h1>Faça login na sua conta</h1>
+          </div>
+
+          <form>
             <label htmlFor="email">E-mail</label>
-            <input type="text" placeholder="E-mail" id="email" />
-            <label htmlFor="pass">Senha</label>
-            <input type="password" id="pass" placeholder="Senha" />
+            <input type="email" id="email" placeholder="email@exemplo.com" />
+            <label htmlFor="passwd">Senha</label>
+            <input type="password" id="passwd" placeholder="*********" />
 
             <div>
               <div>
@@ -25,14 +29,14 @@ export function Main() {
               <a href="#">Esqueceu sua senha?</a>
             </div>
 
-            <button type="submit">Entrar</button>
-            <button type="submit">
-              <img src={iconGoogle} />
-              Ou faça login com o Google
+            <button>Entrar</button>
+            <button>
+              <img src={iconGoogle} /> Ou faça login com o Google{" "}
             </button>
           </form>
+
           <p>
-            Não tem uma conta?<a href="#"> Cadastre-se</a>
+            Não tem uma conta? <a href="#">Cadastre-se</a>
           </p>
         </ContainerForm>
       </Container>
